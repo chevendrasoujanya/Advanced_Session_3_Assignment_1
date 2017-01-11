@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advanced Concepts - Session 3 | Assignment 1</title>
+</head>
+<body>
+	<script>
+		//1. Rest parameter Assignment
+		let myArray = [1, 5, 3, 7];
+		//Rest parameter
+		function myArrayValues(a, b, ...c) {
+			console.log(a);
+			console.log(b);
+			console.log(...c);
+		}
+
+		myArrayValues(...myArray);
+
+		//Displaying the size of the array
+		let count = 0;
+		function getArrLength(arr) {
+			for(let i = 0; i < arr.length; i++) {
+				//console.log(arr[i]);
+				count++;
+			}
+			return count;
+		}
+
+		let myArrayLength = getArrLength(myArray);
+		console.log("My Array Lenght is: " +myArrayLength);
+
+		//Multiply by Two of all the array elements
+		function multiplyByTwo(arr) {
+			for(let i = 0; i < arr.length; i++) {
+				console.log(`Multiplication result of ${arr[i]} is: ${(arr[i] * 2)}`);
+			}
+		}
+
+		multiplyByTwo(myArray);
+
+		//Sorting of an Array
+		myArray.sort(function(a, b) {
+			return a-b;
+		})
+
+		//2. Object API Detail
+		var myConfig = {
+			apiurl: 'www.acadgild.com/api',
+			data: 'Hello World',
+			methodType: 'POST'
+		}
+
+		function makeAjaxRequest(config) {
+			var {url, methodType, data} = config;
+			$.ajax(url, methodType, data);
+		}
+	</script>
+</body>
+</html>
